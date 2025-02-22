@@ -55,7 +55,7 @@ const TerraTraceDashboard: React.FC = () => {
   const nonprofits = [
     {
       name: "Conservation International",
-      logo: "/api/placeholder/150/60",
+      logo: "/CIlogo.png",
       description: "Global environmental nonprofit focused on nature conservation and climate action.",
       verification: "ISO 14001 certified",
       impact: "2.3B tons of CO₂ emissions reduced",
@@ -63,7 +63,7 @@ const TerraTraceDashboard: React.FC = () => {
     },
     {
       name: "Rainforest Alliance",
-      logo: "/api/placeholder/150/60",
+      logo: "/rainforestAlliance.png",
       description: "International nonprofit working to protect forests and biodiversity.",
       verification: "FSC Accredited",
       impact: "6.9M hectares of forest certified",
@@ -74,13 +74,13 @@ const TerraTraceDashboard: React.FC = () => {
   const corporations = [
     {
       name: "Microsoft",
-      logo: "/api/placeholder/150/60",
+      logo: "/microsoft.jpg",
       commitmentSize: "$1B Climate Innovation Fund",
       focusAreas: ["Carbon Removal", "Forest Conservation"]
     },
     {
       name: "Amazon",
-      logo: "/api/placeholder/150/60",
+      logo: "/amazon.jpeg",
       commitmentSize: "Climate Pledge Fund",
       focusAreas: ["Renewable Energy", "Transportation"]
     }
