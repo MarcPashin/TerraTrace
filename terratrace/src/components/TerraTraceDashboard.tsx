@@ -100,16 +100,22 @@ const TerraTraceDashboard: React.FC = () => {
         </div>
 
         <Tabs defaultValue="nonprofits" className="w-full">
-          <TabsList className="mb-6">
-            <TabsTrigger value="nonprofits">
-              <Globe className="mr-2 h-4 w-4" />
-              Verified Nonprofits
-            </TabsTrigger>
-            <TabsTrigger value="corporate">
-              <Award className="mr-2 h-4 w-4" />
-              Corporate Partners
-            </TabsTrigger>
-          </TabsList>
+  <TabsList className="mb-6 bg-white shadow-lg dark:bg-gray-800 dark:shadow-xl rounded-lg">
+    <TabsTrigger
+      value="nonprofits"
+      className="relative flex items-center px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-shadow"
+    >
+      <Globe className="mr-2 h-4 w-4 text-gray-600 dark:text-gray-300" />
+      Verified Nonprofits
+    </TabsTrigger>
+    <TabsTrigger
+      value="corporate"
+      className="relative flex items-center px-4 py-2 rounded-md shadow-md hover:shadow-lg transition-shadow"
+    >
+      <Award className="mr-2 h-4 w-4 text-gray-600 dark:text-gray-300" />
+      Corporate Partners
+    </TabsTrigger>
+  </TabsList>
 
           <TabsContent value="nonprofits">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
