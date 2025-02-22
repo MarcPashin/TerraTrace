@@ -7,9 +7,16 @@ import { Activity, Trees, Wind, Shield, CheckCircle, Award, Globe } from 'lucide
 type ProjectKey = 'reforestation' | 'renewable';
 
 const TerraTraceDashboard = () => {
-  const [selectedProject, setSelectedProject] = useState('reforestation');
+  const [selectedProject, setSelectedProject] = useState<ProjectKey>('reforestation');
   
-  const projectData = {
+  const projectData: Record<ProjectKey, {
+    name: string;
+    credits: number;
+    impact: string;
+    verification: string;
+    lastUpdated: string;
+    monthlyData: { month: string; credits: number; }[];
+  }> = {
     reforestation: {
       name: "Amazon Reforestation Initiative",
       credits: 2500,

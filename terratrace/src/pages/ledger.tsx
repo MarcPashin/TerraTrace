@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Activity, Shield, CheckCircle } from 'lucide-react';
+import { Activity } from 'lucide-react';
 
 const LedgerPage = () => {
   const transactions = [
