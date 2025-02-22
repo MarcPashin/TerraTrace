@@ -4,6 +4,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Activity, Trees, Wind, Shield, CheckCircle, Award, Globe } from 'lucide-react';
 
+type ProjectKey = 'reforestation' | 'renewable';
+
 const TerraTraceDashboard = () => {
   const [selectedProject, setSelectedProject] = useState('reforestation');
   
