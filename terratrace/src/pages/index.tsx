@@ -1,31 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
-import { Mesh, MeshStandardMaterial, TextureLoader } from 'three';
+import React from 'react';
 import { Leaf, Building2, Shield } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/router';
-
-const RotatingGlobe = () => {
-  const meshRef = useRef<Mesh>(null);
-
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.001;
-    }
-  });
-
-  const textureLoader = new TextureLoader();
-  const earthTexture = textureLoader.load('/textures/earth.jpg'); // Ensure you have this texture in the public/textures folder
-
-  return (
-    <mesh ref={meshRef}>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial map={earthTexture} />
-    </mesh>
-  );
-};
 
 interface ImpactMetricProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -70,15 +46,6 @@ const IndexPage = () => {
               </div>
             </header>
           </div>
-        </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Canvas camera={{ position: [0, 0, 2.5] }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            <RotatingGlobe />
-            <OrbitControls enableZoom={false} enablePan={false} />
-            <Stars />
-          </Canvas>
         </div>
       </div>
       
