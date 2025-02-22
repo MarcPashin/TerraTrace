@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { useRouter } from 'next/router';
+import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Activity, Trees, Wind, Shield, CheckCircle, Award, Globe } from 'lucide-react';
 
 type ProjectKey = 'reforestation' | 'renewable';
 
-const TerraTraceDashboard = () => {
+const TerraTraceDashboard: React.FC = () => {
+
+  const router = useRouter();
   const [selectedProject, setSelectedProject] = useState<ProjectKey>('reforestation');
   
   const projectData: Record<ProjectKey, {
@@ -292,11 +295,18 @@ const TerraTraceDashboard = () => {
       </div>
 
       <Card>
-        <CardHeader>
+        <CardHeader className="flex items-center justify-between">
           <CardTitle>Recent Blockchain Transactions</CardTitle>
+          <button 
+            className="ml-auto px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+            onClick={() => router.push('/ledger')}
+          >
+            View Full Ledger
+          </button>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
+          
             {recentTransactions.map((transaction, index) => (
               <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
                 <div className="flex items-center gap-4">
